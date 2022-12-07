@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NamesCompApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="NamesCompApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,9 @@
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resultButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8X-mS-LfM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,15 +92,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ynV-ZN-rfO" secondAttribute="trailing" constant="20" id="yaa-jA-qhd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="partnerNameTF" destination="1xL-eG-g8U" id="Xro-NC-B77"/>
+                        <outlet property="yourNameTF" destination="cpH-bm-ga1" id="qdT-iV-Tdh"/>
+                        <segue destination="kq6-KK-TRh" kind="show" identifier="goToResult" id="vbX-d1-sIl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="pH9-nB-670">
             <objects>
-                <viewController id="kq6-KK-TRh" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="kq6-KK-TRh" customClass="ResultViewController" customModule="NamesCompApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nqK-xq-sdI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,10 +168,16 @@
                             <constraint firstItem="Kzo-2c-iCv" firstAttribute="top" secondItem="XOr-nX-Z7T" secondAttribute="bottom" constant="30" id="nla-6c-4Ab"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1TU-T3-Xjs"/>
+                    <connections>
+                        <outlet property="namesLable" destination="XOr-nX-Z7T" id="TkQ-bk-9xu"/>
+                        <outlet property="progressView" destination="Kzo-2c-iCv" id="OAp-Dt-ToZ"/>
+                        <outlet property="resultLabel" destination="zuM-QV-StJ" id="WyT-A1-Uag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c6-IN-xV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841.53846153846155" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="835" y="-2"/>
         </scene>
     </scenes>
 </document>
