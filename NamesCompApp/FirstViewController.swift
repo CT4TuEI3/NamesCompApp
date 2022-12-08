@@ -28,6 +28,10 @@ class FirstViewController: UIViewController {
         performSegue(withIdentifier: "goToResult", sender: nil)
     }
     
+    @IBAction func unwindSegueToFirtVC(segue: UIStoryboardSegue) {
+        yourNameTF.text = ""
+        partnerNameTF.text = ""
+    }
 }
 
 extension FirstViewController : UITextFieldDelegate {
